@@ -1,0 +1,107 @@
+
+import java.util.Random;
+
+public class Dice {
+
+private final int SIDES;
+
+
+public Dice(int sides){
+   
+    SIDES = sides;
+}
+
+
+
+public int roll(){
+
+    Random rnd = new Random();
+
+    return rnd.nextInt(SIDES) + 1;
+}
+}
+
+
+
+
+
+
+public class mainclas {
+
+public static void main(String[] args) {
+    
+   
+     string personPlay; 
+     double numgess; 
+     string again='';
+     int i = 1 ;
+     int won = 0;
+     int lose = 0;
+     int a=0, b = 0 ;
+do
+ {
+
+    Dice d1 = new Dice(6);
+    Dice d2 = new Dice(6);
+   
+
+
+    int res1, res2;
+
+    res1 = d1.roll();
+    res2 = d2.roll();
+   
+    System.out.println("Roll results: dice 1 = " + res1 + "; dice 2 = " + res2  ");
+
+
+   
+    System.out.println("Enter your guess: "); 
+    personPlay = scan.next();
+
+
+   
+
+    int oddNumbersPoints = ((res1 * (res1%2))+(res2 * (res2 % 2))));
+
+    int evenNumbersPoints = ((res1 * ((res1 + 1) %2)) + (res2 * ((res2+1) % 2)));
+
+   
+    
+    System.out.println("Even Numbers Points: " + evenNumbersPoints);
+    System.out.println("Odd Numbers Points: " + oddNumbersPoints);
+
+ if (personPlay == 'Even')
+{
+  a ++;
+}
+ 
+ if (personPlay == 'Odd')
+{
+  b ++;
+}
+ 
+ if ((personPlay == 'Odd')||( numgess == oddNumbersPoints)) &&((((personPlay == 'Even')||( numgess == evenNumbersPoints))
+       System.out.println("You gess a correct number"); won++;
+ else 
+  {     
+        System.out.println("You gess a incorrect number");lose++;
+ }
+
+
+}
+ System.out.println("do you want to try again ?");
+ again = scan.next();
+
+i++;
+} while (again == 'No');
+System.out.println("you played %d times\n", i );
+System.out.println("number of percentage of player winning is %d \n", ((won/i)*100));
+
+System.out.println(" percentage of Even guesses by the player %d \n", ((a/i)*100));
+System.out.println(" percentage of Odd guesses by the player %d \n", ((b/i)*100));
+
+}
+}
+
+
+
